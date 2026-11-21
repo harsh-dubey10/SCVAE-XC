@@ -1,4 +1,4 @@
-# SCVAE-XC
+# SCVAE-XC: cross-cultural EEG + eye emotion recognition
 
 **Can a model trained on one culture's brain signals read emotions in another culture?**
 
@@ -17,6 +17,13 @@ and training on more than one culture.
 
 No test labels are used to choose a model or a training epoch.
 
+### Confusion matrix
+
+![Confusion matrix](figures/confusion.png)
+
+Rows are the true emotion, columns the prediction, in % of each true emotion (per-window, 3-seed ensemble).
+Neutral films are recognised best. The most common mistake is reading a positive film as negative.
+
 ## Brain map
 
 ![Scalp maps](figures/scalp_effect.png)
@@ -32,17 +39,83 @@ that are significant across all 28 people.
 |---|---|
 | `src/experiments/train_scvae_xc.py` | training SCVAE-XC |
 | `src/baselines/` | the methods we compare against |
-| `src/experiments/` | analysis, statistics, figures (`scalp_maps.py` makes the brain map) |
+| `src/experiments/` | analysis, statistics, figures |
+| `src/preprocessing/` | converting the raw SEED features |
+| `cluster/` | job lists: one line = one training run |
 | `results/tables/` | result tables |
 | `demo/` | small web demo (FastAPI + Gradio) |
 | `docs/` | experiment plans and [more details](docs/DETAILS.md) |
 
-## Run it
+## How to run
+
+### 1. Install
+
+Python 3.10 or newer. A GPU helps but is not required (Apple Silicon `mps` and CPU also work).
 
 ```bash
-python -m venv .venv && .venv/bin/pip install -r requirements.txt
-.venv/bin/python -m src.experiments.train_scvae_xc --sources SEED_GER SEED_FRA --target SEED_CHN_MM --modality eeg_eye --seed 12
+git clone https://github.com/harsh-dubey10/SCVAE-XC.git && cd SCVAE-XC
+python -m venv .venv && source .venv/bin/activate
+pip install -r requirements.txt
 ```
 
-**Data:** the SEED datasets are licensed and not included. Request them from
-[BCMI, SJTU](https://bcmi.sjtu.edu.cn/home/seed/) and put the features under `data/raw/`.
+### 2. Get and convert the data
+
+The SEED datasets are licensed and not included. Request SEED, SEED-GER and SEED-FRA from
+[BCMI, SJTU](https://bcmi.sjtu.edu.cn/home/seed/) and unpack them into `data/raw/SEED_CHN_MM`, `data/raw/SEED_GER`
+and `data/raw/SEED_FRA`. Then convert each one to 4-second EEG + eye windows, for example German:
+
+```bash
+python -m src.preprocessing.convert_seed_crossculture --dataset GER --window-seconds 4 --modality eeg_eye \
+    --source-dir data/raw/SEED_GER/02-EEG-DE-features/eeg_used_4s \
+    --eye-dir data/raw/SEED_GER/04-Eye-tracking-feature/eye_tracking_feature \
+    --output-dir data/processed/SEED_GER_EEG_EYE
+```
+
+Do the same for the other two cultures:
+
+| Culture | `--dataset` | `--source-dir` | `--output-dir` |
+|---|---|---|---|
+| French | `FRA` | `data/raw/SEED_FRA/02-EEG-DE-features/eeg_used_4s` | `data/processed/SEED_FRA_EEG_EYE` |
+| Chinese | `CHN` | `data/raw/SEED_CHN_MM/02-EEG-DE-feature/eeg_used_4s` (note: `feature`, singular) | `data/processed/SEED_CHN_MM_EEG_EYE` |
+
+The `--eye-dir` is `<culture folder>/04-Eye-tracking-feature/eye_tracking_feature` in each case.
+
+### 3. Train
+
+Two cultures → the third (the main setting), EEG + eye:
+
+```bash
+python -m src.experiments.train_scvae_xc --sources SEED_GER SEED_FRA --target SEED_CHN_MM \
+    --modality eeg_eye --seed 12 --learning-rate 0.0025 --input-noise 0
+```
+
+- One training culture instead: `--sources SEED_GER`.
+- EEG only: `--modality eeg`.
+- One test person only (quick check): `--test-subject 1`.
+- Results go to `results/scvae_xc/stage2/<target>/`.
+
+The reported numbers average 3 seeds (`--seed 12`, `34`, `56`). Every run is listed in
+`cluster/scvae_xc_stage2.txt`; on a SLURM cluster:
+
+```bash
+sbatch --export=ALL,MANIFEST=cluster/scvae_xc_stage2.txt,PACK=6 --array=1-9 cluster/scvae_xc_packed.sbatch
+```
+
+### 4. Results, statistics and figures
+
+```bash
+python -m src.experiments.summarize_scvae_xc_stage2   # accuracy table
+python -m src.experiments.significance_tests          # paired tests over the 28 test people
+python -m src.experiments.confusion_matrix            # confusion matrix
+python -m src.experiments.export_demo_model --out demo --target SEED_GER   # one model per test culture
+SCVAE_XC_DEMO=demo python -m src.experiments.scalp_maps                     # brain maps
+```
+
+### 5. Demo
+
+```bash
+cd demo && pip install -r requirements.txt && python run_local.py
+```
+
+This opens a Gradio page in the browser. Pick a test culture and a clip, and the model predicts the emotion. It needs
+the exported models from step 4 in `demo/models/`.
