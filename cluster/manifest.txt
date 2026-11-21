@@ -1,0 +1,40 @@
+# One SLURM array task per line. Each task trains all 15 held-out subjects
+# for one configuration, skipping folds whose result JSON already exists.
+# Columns are passed verbatim to src.experiments.train_scvae_reference.
+# Blank lines and lines starting with # are ignored.
+--alignment standard_mmd --bn-recalibration source --session 1 --seed 12
+--alignment standard_mmd --bn-recalibration source --session 1 --seed 34
+--alignment standard_mmd --bn-recalibration source --session 1 --seed 56
+--alignment standard_mmd --bn-recalibration source --session 2 --seed 12
+--alignment standard_mmd --bn-recalibration source --session 2 --seed 34
+--alignment standard_mmd --bn-recalibration source --session 2 --seed 56
+--alignment standard_mmd --bn-recalibration source --session 3 --seed 12
+--alignment standard_mmd --bn-recalibration source --session 3 --seed 34
+--alignment standard_mmd --bn-recalibration source --session 3 --seed 56
+--alignment entropy_weighted_mmd --bn-recalibration source --session 1 --seed 12
+--alignment entropy_weighted_mmd --bn-recalibration source --session 1 --seed 34
+--alignment entropy_weighted_mmd --bn-recalibration source --session 1 --seed 56
+--alignment entropy_weighted_mmd --bn-recalibration source --session 2 --seed 12
+--alignment entropy_weighted_mmd --bn-recalibration source --session 2 --seed 34
+--alignment entropy_weighted_mmd --bn-recalibration source --session 2 --seed 56
+--alignment entropy_weighted_mmd --bn-recalibration source --session 3 --seed 12
+--alignment entropy_weighted_mmd --bn-recalibration source --session 3 --seed 34
+--alignment entropy_weighted_mmd --bn-recalibration source --session 3 --seed 56
+--alignment posterior_weighted_mmd --bn-recalibration source --session 1 --seed 12
+--alignment posterior_weighted_mmd --bn-recalibration source --session 1 --seed 34
+--alignment posterior_weighted_mmd --bn-recalibration source --session 1 --seed 56
+--alignment posterior_weighted_mmd --bn-recalibration source --session 2 --seed 12
+--alignment posterior_weighted_mmd --bn-recalibration source --session 2 --seed 34
+--alignment posterior_weighted_mmd --bn-recalibration source --session 2 --seed 56
+--alignment posterior_weighted_mmd --bn-recalibration source --session 3 --seed 12
+--alignment posterior_weighted_mmd --bn-recalibration source --session 3 --seed 34
+--alignment posterior_weighted_mmd --bn-recalibration source --session 3 --seed 56
+--alignment combined_uncertainty_mmd --bn-recalibration source --session 1 --seed 12
+--alignment combined_uncertainty_mmd --bn-recalibration source --session 1 --seed 34
+--alignment combined_uncertainty_mmd --bn-recalibration source --session 1 --seed 56
+--alignment combined_uncertainty_mmd --bn-recalibration source --session 2 --seed 12
+--alignment combined_uncertainty_mmd --bn-recalibration source --session 2 --seed 34
+--alignment combined_uncertainty_mmd --bn-recalibration source --session 2 --seed 56
+--alignment combined_uncertainty_mmd --bn-recalibration source --session 3 --seed 12
+--alignment combined_uncertainty_mmd --bn-recalibration source --session 3 --seed 34
+--alignment combined_uncertainty_mmd --bn-recalibration source --session 3 --seed 56

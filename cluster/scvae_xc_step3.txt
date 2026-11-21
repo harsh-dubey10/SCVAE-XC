@@ -1,0 +1,38 @@
+# SCVAE-XC Stage 2 step 3 (plan docs/superpowers/plans/2026-10-24-scvae-xc.md): 36 lines.
+# Submit: sbatch --export=ALL,MANIFEST=cluster/scvae_xc_step3.txt,PACK=6 --array=1-6 cluster/scvae_xc_packed.sbatch
+--sources SEED_CHN_MM --target SEED_GER --modality eeg_eye --seed 12 --learning-rate 0.0025 --input-noise 0 --align ca
+--sources SEED_CHN_MM --target SEED_GER --modality eeg_eye --seed 34 --learning-rate 0.0025 --input-noise 0 --align ca
+--sources SEED_CHN_MM --target SEED_GER --modality eeg_eye --seed 56 --learning-rate 0.0025 --input-noise 0 --align ca
+--sources SEED_CHN_MM --target SEED_FRA --modality eeg_eye --seed 12 --learning-rate 0.0005 --input-noise 0.1 --align ca
+--sources SEED_CHN_MM --target SEED_FRA --modality eeg_eye --seed 34 --learning-rate 0.0005 --input-noise 0.1 --align ca
+--sources SEED_CHN_MM --target SEED_FRA --modality eeg_eye --seed 56 --learning-rate 0.0005 --input-noise 0.1 --align ca
+--sources SEED_GER --target SEED_CHN_MM --modality eeg_eye --seed 12 --learning-rate 0.0025 --input-noise 0.1 --align ca
+--sources SEED_GER --target SEED_CHN_MM --modality eeg_eye --seed 34 --learning-rate 0.0025 --input-noise 0.1 --align ca
+--sources SEED_GER --target SEED_CHN_MM --modality eeg_eye --seed 56 --learning-rate 0.0025 --input-noise 0.1 --align ca
+--sources SEED_GER --target SEED_FRA --modality eeg_eye --seed 12 --learning-rate 0.0005 --input-noise 0.1 --align ca
+--sources SEED_GER --target SEED_FRA --modality eeg_eye --seed 34 --learning-rate 0.0005 --input-noise 0.1 --align ca
+--sources SEED_GER --target SEED_FRA --modality eeg_eye --seed 56 --learning-rate 0.0005 --input-noise 0.1 --align ca
+--sources SEED_FRA --target SEED_CHN_MM --modality eeg_eye --seed 12 --learning-rate 0.0025 --input-noise 0.1 --align ca
+--sources SEED_FRA --target SEED_CHN_MM --modality eeg_eye --seed 34 --learning-rate 0.0025 --input-noise 0.1 --align ca
+--sources SEED_FRA --target SEED_CHN_MM --modality eeg_eye --seed 56 --learning-rate 0.0025 --input-noise 0.1 --align ca
+--sources SEED_FRA --target SEED_GER --modality eeg_eye --seed 12 --learning-rate 0.0025 --input-noise 0 --align ca
+--sources SEED_FRA --target SEED_GER --modality eeg_eye --seed 34 --learning-rate 0.0025 --input-noise 0 --align ca
+--sources SEED_FRA --target SEED_GER --modality eeg_eye --seed 56 --learning-rate 0.0025 --input-noise 0 --align ca
+--sources SEED_GER SEED_FRA --target SEED_CHN_MM --modality eeg_eye --seed 12 --learning-rate 0.0025 --input-noise 0.1 --align ca
+--sources SEED_GER SEED_FRA --target SEED_CHN_MM --modality eeg_eye --seed 34 --learning-rate 0.0025 --input-noise 0.1 --align ca
+--sources SEED_GER SEED_FRA --target SEED_CHN_MM --modality eeg_eye --seed 56 --learning-rate 0.0025 --input-noise 0.1 --align ca
+--sources SEED_CHN_MM SEED_FRA --target SEED_GER --modality eeg_eye --seed 12 --learning-rate 0.0025 --input-noise 0 --align ca
+--sources SEED_CHN_MM SEED_FRA --target SEED_GER --modality eeg_eye --seed 34 --learning-rate 0.0025 --input-noise 0 --align ca
+--sources SEED_CHN_MM SEED_FRA --target SEED_GER --modality eeg_eye --seed 56 --learning-rate 0.0025 --input-noise 0 --align ca
+--sources SEED_CHN_MM SEED_GER --target SEED_FRA --modality eeg_eye --seed 12 --learning-rate 0.0005 --input-noise 0.1 --align ca
+--sources SEED_CHN_MM SEED_GER --target SEED_FRA --modality eeg_eye --seed 34 --learning-rate 0.0005 --input-noise 0.1 --align ca
+--sources SEED_CHN_MM SEED_GER --target SEED_FRA --modality eeg_eye --seed 56 --learning-rate 0.0005 --input-noise 0.1 --align ca
+--sources SEED_GER SEED_FRA --target SEED_CHN_MM --modality eeg_eye --seed 12 --learning-rate 0.0025 --input-noise 0.1 --align cmmd
+--sources SEED_GER SEED_FRA --target SEED_CHN_MM --modality eeg_eye --seed 34 --learning-rate 0.0025 --input-noise 0.1 --align cmmd
+--sources SEED_GER SEED_FRA --target SEED_CHN_MM --modality eeg_eye --seed 56 --learning-rate 0.0025 --input-noise 0.1 --align cmmd
+--sources SEED_CHN_MM SEED_FRA --target SEED_GER --modality eeg_eye --seed 12 --learning-rate 0.0025 --input-noise 0 --align cmmd
+--sources SEED_CHN_MM SEED_FRA --target SEED_GER --modality eeg_eye --seed 34 --learning-rate 0.0025 --input-noise 0 --align cmmd
+--sources SEED_CHN_MM SEED_FRA --target SEED_GER --modality eeg_eye --seed 56 --learning-rate 0.0025 --input-noise 0 --align cmmd
+--sources SEED_CHN_MM SEED_GER --target SEED_FRA --modality eeg_eye --seed 12 --learning-rate 0.0005 --input-noise 0.1 --align cmmd
+--sources SEED_CHN_MM SEED_GER --target SEED_FRA --modality eeg_eye --seed 34 --learning-rate 0.0005 --input-noise 0.1 --align cmmd
+--sources SEED_CHN_MM SEED_GER --target SEED_FRA --modality eeg_eye --seed 56 --learning-rate 0.0005 --input-noise 0.1 --align cmmd

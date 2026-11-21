@@ -1,0 +1,25 @@
+# Environments
+.venv/
+.venv-cluster/
+__pycache__/
+*.pyc
+
+# macOS
+.DS_Store
+__MACOSX/
+
+# Licensed SEED data and large artifacts (not redistributable / too big)
+data/
+checkpoints/
+*.pt
+*.pth
+*.sif
+*.zip
+
+# Per-run logs (large, regenerable)
+results/logs/
+
+# Smoke-test outputs (never reported)
+results/_*/
+results/reference_scvae/smoke/
+results/reference_scvae/local_check/

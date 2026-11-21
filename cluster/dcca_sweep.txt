@@ -1,0 +1,39 @@
+# DCCA-AM fair re-run (docs/superpowers/specs/2026-10-01-dcca-am-fair-rerun-design.md).
+# dcca_array.sbatch adds: --archs 0-20 --epochs 100 --device cuda --skip-existing
+# emotion: 6 directions x 3 seeds
+--source SEED_CHN_MM --target SEED_GER --task emotion --seed 12
+--source SEED_CHN_MM --target SEED_GER --task emotion --seed 34
+--source SEED_CHN_MM --target SEED_GER --task emotion --seed 56
+--source SEED_CHN_MM --target SEED_FRA --task emotion --seed 12
+--source SEED_CHN_MM --target SEED_FRA --task emotion --seed 34
+--source SEED_CHN_MM --target SEED_FRA --task emotion --seed 56
+--source SEED_GER --target SEED_CHN_MM --task emotion --seed 12
+--source SEED_GER --target SEED_CHN_MM --task emotion --seed 34
+--source SEED_GER --target SEED_CHN_MM --task emotion --seed 56
+--source SEED_GER --target SEED_FRA --task emotion --seed 12
+--source SEED_GER --target SEED_FRA --task emotion --seed 34
+--source SEED_GER --target SEED_FRA --task emotion --seed 56
+--source SEED_FRA --target SEED_CHN_MM --task emotion --seed 12
+--source SEED_FRA --target SEED_CHN_MM --task emotion --seed 34
+--source SEED_FRA --target SEED_CHN_MM --task emotion --seed 56
+--source SEED_FRA --target SEED_GER --task emotion --seed 12
+--source SEED_FRA --target SEED_GER --task emotion --seed 34
+--source SEED_FRA --target SEED_GER --task emotion --seed 56
+# emotion, new films: German <-> French without the 5 shared films in training
+--source SEED_GER --target SEED_FRA --task emotion_newfilms --seed 12
+--source SEED_GER --target SEED_FRA --task emotion_newfilms --seed 34
+--source SEED_GER --target SEED_FRA --task emotion_newfilms --seed 56
+--source SEED_FRA --target SEED_GER --task emotion_newfilms --seed 12
+--source SEED_FRA --target SEED_GER --task emotion_newfilms --seed 34
+--source SEED_FRA --target SEED_GER --task emotion_newfilms --seed 56
+# film identification: German <-> French, the four film tasks of film_identification
+--source SEED_GER --target SEED_FRA --task film --seed 12
+--source SEED_GER --target SEED_FRA --task film --seed 34
+--source SEED_GER --target SEED_FRA --task film --seed 56
+--source SEED_FRA --target SEED_GER --task film --seed 12
+--source SEED_FRA --target SEED_GER --task film --seed 34
+--source SEED_FRA --target SEED_GER --task film --seed 56
+# sensitivity: fair setting (architecture 0) with the released unshuffled order, German -> French
+--source SEED_GER --target SEED_FRA --task emotion --seed 12 --archs 0-0 --no-shuffle --output-root results/dcca_am_noshuffle
+--source SEED_GER --target SEED_FRA --task emotion --seed 34 --archs 0-0 --no-shuffle --output-root results/dcca_am_noshuffle
+--source SEED_GER --target SEED_FRA --task emotion --seed 56 --archs 0-0 --no-shuffle --output-root results/dcca_am_noshuffle

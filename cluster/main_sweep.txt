@@ -1,0 +1,57 @@
+# Main SEED sweep: every headline row in one sweep, so rows compare fold by fold.
+# 6 configurations x 3 sessions x 3 seeds = 54 array tasks (15 subjects each).
+# Submit: sbatch --export=ALL,MANIFEST=cluster/main_sweep.txt --array=1-54 cluster/train_array.sbatch
+--session 1 --seed 12 --output-dir results/main_sweep --checkpoint-dir checkpoints/main_sweep
+--session 1 --seed 34 --output-dir results/main_sweep --checkpoint-dir checkpoints/main_sweep
+--session 1 --seed 56 --output-dir results/main_sweep --checkpoint-dir checkpoints/main_sweep
+--session 2 --seed 12 --output-dir results/main_sweep --checkpoint-dir checkpoints/main_sweep
+--session 2 --seed 34 --output-dir results/main_sweep --checkpoint-dir checkpoints/main_sweep
+--session 2 --seed 56 --output-dir results/main_sweep --checkpoint-dir checkpoints/main_sweep
+--session 3 --seed 12 --output-dir results/main_sweep --checkpoint-dir checkpoints/main_sweep
+--session 3 --seed 34 --output-dir results/main_sweep --checkpoint-dir checkpoints/main_sweep
+--session 3 --seed 56 --output-dir results/main_sweep --checkpoint-dir checkpoints/main_sweep
+--bn-recalibration source --session 1 --seed 12 --output-dir results/main_sweep --checkpoint-dir checkpoints/main_sweep
+--bn-recalibration source --session 1 --seed 34 --output-dir results/main_sweep --checkpoint-dir checkpoints/main_sweep
+--bn-recalibration source --session 1 --seed 56 --output-dir results/main_sweep --checkpoint-dir checkpoints/main_sweep
+--bn-recalibration source --session 2 --seed 12 --output-dir results/main_sweep --checkpoint-dir checkpoints/main_sweep
+--bn-recalibration source --session 2 --seed 34 --output-dir results/main_sweep --checkpoint-dir checkpoints/main_sweep
+--bn-recalibration source --session 2 --seed 56 --output-dir results/main_sweep --checkpoint-dir checkpoints/main_sweep
+--bn-recalibration source --session 3 --seed 12 --output-dir results/main_sweep --checkpoint-dir checkpoints/main_sweep
+--bn-recalibration source --session 3 --seed 34 --output-dir results/main_sweep --checkpoint-dir checkpoints/main_sweep
+--bn-recalibration source --session 3 --seed 56 --output-dir results/main_sweep --checkpoint-dir checkpoints/main_sweep
+--bn-recalibration target --session 1 --seed 12 --output-dir results/main_sweep --checkpoint-dir checkpoints/main_sweep
+--bn-recalibration target --session 1 --seed 34 --output-dir results/main_sweep --checkpoint-dir checkpoints/main_sweep
+--bn-recalibration target --session 1 --seed 56 --output-dir results/main_sweep --checkpoint-dir checkpoints/main_sweep
+--bn-recalibration target --session 2 --seed 12 --output-dir results/main_sweep --checkpoint-dir checkpoints/main_sweep
+--bn-recalibration target --session 2 --seed 34 --output-dir results/main_sweep --checkpoint-dir checkpoints/main_sweep
+--bn-recalibration target --session 2 --seed 56 --output-dir results/main_sweep --checkpoint-dir checkpoints/main_sweep
+--bn-recalibration target --session 3 --seed 12 --output-dir results/main_sweep --checkpoint-dir checkpoints/main_sweep
+--bn-recalibration target --session 3 --seed 34 --output-dir results/main_sweep --checkpoint-dir checkpoints/main_sweep
+--bn-recalibration target --session 3 --seed 56 --output-dir results/main_sweep --checkpoint-dir checkpoints/main_sweep
+--lr-schedule cosine --session 1 --seed 12 --output-dir results/main_sweep --checkpoint-dir checkpoints/main_sweep
+--lr-schedule cosine --session 1 --seed 34 --output-dir results/main_sweep --checkpoint-dir checkpoints/main_sweep
+--lr-schedule cosine --session 1 --seed 56 --output-dir results/main_sweep --checkpoint-dir checkpoints/main_sweep
+--lr-schedule cosine --session 2 --seed 12 --output-dir results/main_sweep --checkpoint-dir checkpoints/main_sweep
+--lr-schedule cosine --session 2 --seed 34 --output-dir results/main_sweep --checkpoint-dir checkpoints/main_sweep
+--lr-schedule cosine --session 2 --seed 56 --output-dir results/main_sweep --checkpoint-dir checkpoints/main_sweep
+--lr-schedule cosine --session 3 --seed 12 --output-dir results/main_sweep --checkpoint-dir checkpoints/main_sweep
+--lr-schedule cosine --session 3 --seed 34 --output-dir results/main_sweep --checkpoint-dir checkpoints/main_sweep
+--lr-schedule cosine --session 3 --seed 56 --output-dir results/main_sweep --checkpoint-dir checkpoints/main_sweep
+--lr-schedule cosine --bn-recalibration source --session 1 --seed 12 --output-dir results/main_sweep --checkpoint-dir checkpoints/main_sweep
+--lr-schedule cosine --bn-recalibration source --session 1 --seed 34 --output-dir results/main_sweep --checkpoint-dir checkpoints/main_sweep
+--lr-schedule cosine --bn-recalibration source --session 1 --seed 56 --output-dir results/main_sweep --checkpoint-dir checkpoints/main_sweep
+--lr-schedule cosine --bn-recalibration source --session 2 --seed 12 --output-dir results/main_sweep --checkpoint-dir checkpoints/main_sweep
+--lr-schedule cosine --bn-recalibration source --session 2 --seed 34 --output-dir results/main_sweep --checkpoint-dir checkpoints/main_sweep
+--lr-schedule cosine --bn-recalibration source --session 2 --seed 56 --output-dir results/main_sweep --checkpoint-dir checkpoints/main_sweep
+--lr-schedule cosine --bn-recalibration source --session 3 --seed 12 --output-dir results/main_sweep --checkpoint-dir checkpoints/main_sweep
+--lr-schedule cosine --bn-recalibration source --session 3 --seed 34 --output-dir results/main_sweep --checkpoint-dir checkpoints/main_sweep
+--lr-schedule cosine --bn-recalibration source --session 3 --seed 56 --output-dir results/main_sweep --checkpoint-dir checkpoints/main_sweep
+--protocol reported_diagnostic --session 1 --seed 12 --output-dir results/main_sweep --checkpoint-dir checkpoints/main_sweep
+--protocol reported_diagnostic --session 1 --seed 34 --output-dir results/main_sweep --checkpoint-dir checkpoints/main_sweep
+--protocol reported_diagnostic --session 1 --seed 56 --output-dir results/main_sweep --checkpoint-dir checkpoints/main_sweep
+--protocol reported_diagnostic --session 2 --seed 12 --output-dir results/main_sweep --checkpoint-dir checkpoints/main_sweep
+--protocol reported_diagnostic --session 2 --seed 34 --output-dir results/main_sweep --checkpoint-dir checkpoints/main_sweep
+--protocol reported_diagnostic --session 2 --seed 56 --output-dir results/main_sweep --checkpoint-dir checkpoints/main_sweep
+--protocol reported_diagnostic --session 3 --seed 12 --output-dir results/main_sweep --checkpoint-dir checkpoints/main_sweep
+--protocol reported_diagnostic --session 3 --seed 34 --output-dir results/main_sweep --checkpoint-dir checkpoints/main_sweep
+--protocol reported_diagnostic --session 3 --seed 56 --output-dir results/main_sweep --checkpoint-dir checkpoints/main_sweep

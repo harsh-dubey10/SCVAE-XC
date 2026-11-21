@@ -1,0 +1,585 @@
+{
+  "tasks": [
+    {
+      "train": "German",
+      "test": "French",
+      "task": "negative",
+      "modality": "EEG + eye",
+      "accuracy": 0.2957996632996633,
+      "per_subject": [
+        0.2037,
+        0.4133,
+        0.5776,
+        0.1499,
+        0.4444,
+        0.1498,
+        0.2054,
+        0.2222
+      ],
+      "subjects_above_chance": 3,
+      "chance": 0.3333333333333333,
+      "null_mean": 0.3320691501717988,
+      "p": 0.7386306846576711
+    },
+    {
+      "train": "German",
+      "test": "French",
+      "task": "negative",
+      "modality": "EEG",
+      "accuracy": 0.2018265993265993,
+      "per_subject": [
+        0.2907,
+        0.2441,
+        0.3437,
+        0.1111,
+        0.2222,
+        0.0694,
+        0.1111,
+        0.2222
+      ],
+      "subjects_above_chance": 1,
+      "chance": 0.3333333333333333,
+      "null_mean": 0.33223259208530137,
+      "p": 0.9895052473763118
+    },
+    {
+      "train": "German",
+      "test": "French",
+      "task": "negative",
+      "modality": "eye",
+      "accuracy": 0.13374579124579122,
+      "per_subject": [
+        0.0791,
+        0.1229,
+        0.3141,
+        0.0269,
+        0.1936,
+        0.0438,
+        0.1111,
+        0.1785
+      ],
+      "subjects_above_chance": 0,
+      "chance": 0.3333333333333333,
+      "null_mean": 0.33427227129401854,
+      "p": 1.0
+    },
+    {
+      "train": "German",
+      "test": "French",
+      "task": "negative_2",
+      "modality": "EEG + eye",
+      "accuracy": 0.650479797979798,
+      "per_subject": [
+        0.4369,
+        0.7521,
+        0.3535,
+        0.5,
+        0.8333,
+        0.6919,
+        0.7929,
+        0.8431
+      ],
+      "subjects_above_chance": 5,
+      "chance": 0.5,
+      "null_mean": 0.4999515871349363,
+      "p": 0.010494752623688156
+    },
+    {
+      "train": "German",
+      "test": "French",
+      "task": "negative_2",
+      "modality": "EEG",
+      "accuracy": 0.5529419191919192,
+      "per_subject": [
+        0.3756,
+        0.72,
+        0.3689,
+        0.5,
+        0.5588,
+        0.6667,
+        0.5,
+        0.7336
+      ],
+      "subjects_above_chance": 4,
+      "chance": 0.5,
+      "null_mean": 0.49991794002067774,
+      "p": 0.12043978010994502
+    },
+    {
+      "train": "German",
+      "test": "French",
+      "task": "negative_2",
+      "modality": "eye",
+      "accuracy": 0.8482323232323232,
+      "per_subject": [
+        0.8333,
+        0.8644,
+        0.6178,
+        0.9672,
+        1.0,
+        0.6698,
+        1.0,
+        0.8333
+      ],
+      "subjects_above_chance": 8,
+      "chance": 0.5,
+      "null_mean": 0.5014432978334065,
+      "p": 0.0004997501249375312
+    },
+    {
+      "train": "German",
+      "test": "French",
+      "task": "positive",
+      "modality": "EEG + eye",
+      "accuracy": 0.20833333333333331,
+      "per_subject": [
+        0.1667,
+        0.1667,
+        0.0,
+        0.3333,
+        0.3333,
+        0.0,
+        0.1667,
+        0.5
+      ],
+      "subjects_above_chance": 0,
+      "chance": 0.5,
+      "null_mean": 0.5003052377363661,
+      "p": 1.0
+    },
+    {
+      "train": "German",
+      "test": "French",
+      "task": "positive",
+      "modality": "EEG",
+      "accuracy": 0.20703125,
+      "per_subject": [
+        0.2552,
+        0.5,
+        0.0,
+        0.1667,
+        0.3333,
+        0.0,
+        0.2344,
+        0.1667
+      ],
+      "subjects_above_chance": 0,
+      "chance": 0.5,
+      "null_mean": 0.49985601479357933,
+      "p": 1.0
+    },
+    {
+      "train": "German",
+      "test": "French",
+      "task": "positive",
+      "modality": "eye",
+      "accuracy": 0.44999999999999996,
+      "per_subject": [
+        0.8333,
+        0.0,
+        0.34,
+        0.5,
+        0.5,
+        0.26,
+        0.3333,
+        0.8333
+      ],
+      "subjects_above_chance": 2,
+      "chance": 0.5,
+      "null_mean": 0.50064122396547,
+      "p": 0.777111444277861
+    },
+    {
+      "train": "German",
+      "test": "French",
+      "task": "all_5",
+      "modality": "EEG + eye",
+      "accuracy": 0.13849053030303032,
+      "per_subject": [
+        0.189,
+        0.0889,
+        0.1156,
+        0.1276,
+        0.2,
+        0.0374,
+        0.0828,
+        0.2667
+      ],
+      "subjects_above_chance": 1,
+      "chance": 0.2,
+      "null_mean": 0.2007305876512939,
+      "p": 0.953023488255872
+    },
+    {
+      "train": "German",
+      "test": "French",
+      "task": "all_5",
+      "modality": "EEG",
+      "accuracy": 0.1343888888888889,
+      "per_subject": [
+        0.2142,
+        0.1616,
+        0.144,
+        0.1333,
+        0.1212,
+        0.0533,
+        0.0475,
+        0.2
+      ],
+      "subjects_above_chance": 1,
+      "chance": 0.2,
+      "null_mean": 0.19978145127091212,
+      "p": 0.9650174912543729
+    },
+    {
+      "train": "German",
+      "test": "French",
+      "task": "all_5",
+      "modality": "eye",
+      "accuracy": 0.09302020202020203,
+      "per_subject": [
+        0.1333,
+        0.0162,
+        0.1333,
+        0.0667,
+        0.128,
+        0.0,
+        0.1333,
+        0.1333
+      ],
+      "subjects_above_chance": 0,
+      "chance": 0.2,
+      "null_mean": 0.20080633942854567,
+      "p": 0.999000499750125
+    },
+    {
+      "train": "French",
+      "test": "German",
+      "task": "negative",
+      "modality": "EEG + eye",
+      "accuracy": 0.40114379084967317,
+      "per_subject": [
+        0.1405,
+        0.4444,
+        0.634,
+        0.3333,
+        0.3333,
+        0.5,
+        0.4902,
+        0.3333
+      ],
+      "subjects_above_chance": 4,
+      "chance": 0.3333333333333333,
+      "null_mean": 0.33323929664020185,
+      "p": 0.10294852573713144
+    },
+    {
+      "train": "French",
+      "test": "German",
+      "task": "negative",
+      "modality": "EEG",
+      "accuracy": 0.21073232323232322,
+      "per_subject": [
+        0.0,
+        0.3333,
+        0.4949,
+        0.0242,
+        0.1667,
+        0.1667,
+        0.3333,
+        0.1667
+      ],
+      "subjects_above_chance": 1,
+      "chance": 0.3333333333333333,
+      "null_mean": 0.3317702151858268,
+      "p": 0.9790104947526237
+    },
+    {
+      "train": "French",
+      "test": "German",
+      "task": "negative",
+      "modality": "eye",
+      "accuracy": 0.2042207792207792,
+      "per_subject": [
+        0.2909,
+        0.1132,
+        0.2233,
+        0.3333,
+        0.1683,
+        0.1683,
+        0.0032,
+        0.3333
+      ],
+      "subjects_above_chance": 0,
+      "chance": 0.3333333333333333,
+      "null_mean": 0.3345782735627846,
+      "p": 0.9845077461269365
+    },
+    {
+      "train": "French",
+      "test": "German",
+      "task": "negative_2",
+      "modality": "EEG + eye",
+      "accuracy": 0.9019607843137255,
+      "per_subject": [
+        0.7157,
+        0.6667,
+        1.0,
+        0.8333,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "subjects_above_chance": 8,
+      "chance": 0.5,
+      "null_mean": 0.5020567116137614,
+      "p": 0.0004997501249375312
+    },
+    {
+      "train": "French",
+      "test": "German",
+      "task": "negative_2",
+      "modality": "EEG",
+      "accuracy": 0.42746212121212124,
+      "per_subject": [
+        0.0152,
+        0.5,
+        0.7242,
+        0.3303,
+        0.5273,
+        0.3227,
+        0.5,
+        0.5
+      ],
+      "subjects_above_chance": 2,
+      "chance": 0.5,
+      "null_mean": 0.4978474699464499,
+      "p": 0.8225887056471765
+    },
+    {
+      "train": "French",
+      "test": "German",
+      "task": "negative_2",
+      "modality": "eye",
+      "accuracy": 0.9583333333333333,
+      "per_subject": [
+        1.0,
+        0.6667,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "subjects_above_chance": 8,
+      "chance": 0.5,
+      "null_mean": 0.5021298378218157,
+      "p": 0.0004997501249375312
+    },
+    {
+      "train": "French",
+      "test": "German",
+      "task": "positive",
+      "modality": "EEG + eye",
+      "accuracy": 0.2977430555555556,
+      "per_subject": [
+        0.3333,
+        0.5417,
+        0.5,
+        0.0,
+        0.0,
+        0.25,
+        0.5,
+        0.2569
+      ],
+      "subjects_above_chance": 1,
+      "chance": 0.5,
+      "null_mean": 0.4984726323316183,
+      "p": 0.992503748125937
+    },
+    {
+      "train": "French",
+      "test": "German",
+      "task": "positive",
+      "modality": "EEG",
+      "accuracy": 0.29748062015503873,
+      "per_subject": [
+        0.3333,
+        0.4922,
+        0.4186,
+        0.1124,
+        0.0233,
+        0.25,
+        0.5,
+        0.25
+      ],
+      "subjects_above_chance": 0,
+      "chance": 0.5,
+      "null_mean": 0.499186341868398,
+      "p": 0.9985007496251874
+    },
+    {
+      "train": "French",
+      "test": "German",
+      "task": "positive",
+      "modality": "eye",
+      "accuracy": 0.517246716192937,
+      "per_subject": [
+        0.4922,
+        0.4259,
+        0.5,
+        0.4767,
+        0.7431,
+        0.5,
+        0.7431,
+        0.2569
+      ],
+      "subjects_above_chance": 2,
+      "chance": 0.5,
+      "null_mean": 0.5015528469656457,
+      "p": 0.38580709645177413
+    },
+    {
+      "train": "French",
+      "test": "German",
+      "task": "all_5",
+      "modality": "EEG + eye",
+      "accuracy": 0.1953689943207727,
+      "per_subject": [
+        0.1333,
+        0.0667,
+        0.4098,
+        0.1973,
+        0.2,
+        0.2,
+        0.2559,
+        0.1
+      ],
+      "subjects_above_chance": 2,
+      "chance": 0.2,
+      "null_mean": 0.2003706444586325,
+      "p": 0.544727636181909
+    },
+    {
+      "train": "French",
+      "test": "German",
+      "task": "all_5",
+      "modality": "EEG",
+      "accuracy": 0.1387277701778386,
+      "per_subject": [
+        0.1085,
+        0.0961,
+        0.2504,
+        0.0548,
+        0.1,
+        0.2,
+        0.2,
+        0.1
+      ],
+      "subjects_above_chance": 1,
+      "chance": 0.2,
+      "null_mean": 0.19961481450310228,
+      "p": 0.9465267366316842
+    },
+    {
+      "train": "French",
+      "test": "German",
+      "task": "all_5",
+      "modality": "eye",
+      "accuracy": 0.28741324513126837,
+      "per_subject": [
+        0.2461,
+        0.3303,
+        0.3039,
+        0.2,
+        0.2972,
+        0.201,
+        0.4972,
+        0.2237
+      ],
+      "subjects_above_chance": 7,
+      "chance": 0.2,
+      "null_mean": 0.19941041637419965,
+      "p": 0.021989005497251374
+    }
+  ],
+  "timing_control": [
+    {
+      "train": "German",
+      "test": "French",
+      "modality": "EEG + eye",
+      "called_apw": {
+        "Dead Man Walking": 0.26722222222222225,
+        "A Perfect World": 0.5681818181818182,
+        "City of Angels": 0.10582010582010581,
+        "E.T.": 0.22855392156862744,
+        "Dangerous Mind": 0.1760752688172043,
+        "Life is Beautiful": 0.3333333333333333
+      }
+    },
+    {
+      "train": "German",
+      "test": "French",
+      "modality": "EEG",
+      "called_apw": {
+        "Dead Man Walking": 0.15611111111111112,
+        "A Perfect World": 0.2619949494949495,
+        "City of Angels": 0.06812169312169312,
+        "E.T.": 0.19301470588235295,
+        "Dangerous Mind": 0.3077956989247312,
+        "Life is Beautiful": 0.5309139784946236
+      }
+    },
+    {
+      "train": "German",
+      "test": "French",
+      "modality": "eye",
+      "called_apw": {
+        "Dead Man Walking": 0.15833333333333333,
+        "A Perfect World": 0.8547979797979798,
+        "City of Angels": 0.23544973544973544,
+        "E.T.": 0.25980392156862747,
+        "Dangerous Mind": 0.08333333333333333,
+        "Life is Beautiful": 0.2056451612903226
+      }
+    },
+    {
+      "train": "French",
+      "test": "German",
+      "modality": "EEG + eye",
+      "called_apw": {
+        "Dead Man Walking": 0.05,
+        "A Perfect World": 0.8147058823529412,
+        "The Piano": 0.9075757575757576,
+        "Saving Private Ryan": 0.10232558139534884,
+        "Misery": 0.6244047619047619
+      }
+    },
+    {
+      "train": "French",
+      "test": "German",
+      "modality": "EEG",
+      "called_apw": {
+        "Dead Man Walking": 0.759090909090909,
+        "A Perfect World": 0.6,
+        "The Piano": 0.7196969696969697,
+        "Saving Private Ryan": 0.40813953488372096,
+        "Misery": 0.5648809523809524
+      }
+    },
+    {
+      "train": "French",
+      "test": "German",
+      "modality": "eye",
+      "called_apw": {
+        "Dead Man Walking": 0.05,
+        "A Perfect World": 0.95,
+        "The Piano": 0.9015151515151515,
+        "Saving Private Ryan": 0.1,
+        "Misery": 0.5136904761904761
+      }
+    }
+  ]
+}
