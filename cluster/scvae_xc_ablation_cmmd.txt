@@ -1,0 +1,10 @@
+# Ablation: SCVAE-XC two cultures, eye branch, culture-MMD weight 0 (otherwise identical to stage2 eye_2src).
+--sources SEED_GER SEED_FRA --target SEED_CHN_MM --modality eeg_eye --seed 12 --learning-rate 0.0025 --input-noise 0.1 --culture-mmd-weight 0 --output-root results/scvae_xc/ablation_no_culture_mmd
+--sources SEED_GER SEED_FRA --target SEED_CHN_MM --modality eeg_eye --seed 34 --learning-rate 0.0025 --input-noise 0.1 --culture-mmd-weight 0 --output-root results/scvae_xc/ablation_no_culture_mmd
+--sources SEED_GER SEED_FRA --target SEED_CHN_MM --modality eeg_eye --seed 56 --learning-rate 0.0025 --input-noise 0.1 --culture-mmd-weight 0 --output-root results/scvae_xc/ablation_no_culture_mmd
+--sources SEED_CHN_MM SEED_FRA --target SEED_GER --modality eeg_eye --seed 12 --learning-rate 0.0025 --input-noise 0 --culture-mmd-weight 0 --output-root results/scvae_xc/ablation_no_culture_mmd
+--sources SEED_CHN_MM SEED_FRA --target SEED_GER --modality eeg_eye --seed 34 --learning-rate 0.0025 --input-noise 0 --culture-mmd-weight 0 --output-root results/scvae_xc/ablation_no_culture_mmd
+--sources SEED_CHN_MM SEED_FRA --target SEED_GER --modality eeg_eye --seed 56 --learning-rate 0.0025 --input-noise 0 --culture-mmd-weight 0 --output-root results/scvae_xc/ablation_no_culture_mmd
+--sources SEED_CHN_MM SEED_GER --target SEED_FRA --modality eeg_eye --seed 12 --learning-rate 0.0005 --input-noise 0.1 --culture-mmd-weight 0 --output-root results/scvae_xc/ablation_no_culture_mmd
+--sources SEED_CHN_MM SEED_GER --target SEED_FRA --modality eeg_eye --seed 34 --learning-rate 0.0005 --input-noise 0.1 --culture-mmd-weight 0 --output-root results/scvae_xc/ablation_no_culture_mmd
+--sources SEED_CHN_MM SEED_GER --target SEED_FRA --modality eeg_eye --seed 56 --learning-rate 0.0005 --input-noise 0.1 --culture-mmd-weight 0 --output-root results/scvae_xc/ablation_no_culture_mmd
