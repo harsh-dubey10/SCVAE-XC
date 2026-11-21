@@ -110,6 +110,21 @@ The reported numbers average 3 seeds (`--seed 12`, `34`, `56`). Every run is lis
 sbatch --export=ALL,MANIFEST=cluster/scvae_xc_stage2.txt,PACK=6 --array=1-9 cluster/scvae_xc_packed.sbatch
 ```
 
+### DCCA-AM re-implementation (baseline)
+
+Ported to PyTorch (`src/models/dcca_am.py`, `src/experiments/train_dcca_am.py`) from the authors' only public script
+(within-subject, Chinese), without changing the design:
+
+- two small networks, EEG `310 -> h1 -> h2 -> 12` and eye `33 -> h1 -> h2 -> 12`, sigmoid activations;
+  attention-weighted fusion and a linear classifier;
+- losses: cross-entropy and a deep CCA term with weight -0.1; RMSprop (learning rates 1e-4 and 5e-5),
+  batch size 30, 100 epochs, min-max scaling, unnormalised DE features;
+- the original code samples 100 random sizes (`h1` in [100, 200), `h2` in [20, 50)) and reports the best **test**
+  accuracy over sizes and epochs;
+- strict version: sizes fixed in advance at `h1 = 150`, `h2 = 35`, final epoch;
+- original rule, for comparison: 20 random sizes, best one picked on test labels;
+- all runs use three seeds. Job list: `cluster/dcca_sweep.txt`; summary: `python -m src.experiments.summarize_dcca_am`.
+
 ### 4. Results, statistics and figures
 
 ```bash
