@@ -189,8 +189,8 @@ def train_epoch(model, optimizer, source_loader, target_loader, losses, epoch, a
         total = (LOSS_WEIGHTS["reconstruction"] * (reconstruction_loss(s_recon, bx) + reconstruction_loss(t_recon, tx))
                  + LOSS_WEIGHTS["kl"] * (kl_loss(s_mu, s_logvar) + kl_loss(t_mu, t_logvar))
                  + LOSS_WEIGHTS["classification"] * nn.functional.cross_entropy(s_logits, by)
-                 + LOSS_WEIGHTS["supcon"] * supcon(model.contrastive_views(s_mu), by)
-                 + LOSS_WEIGHTS["mmd"] * mmd(s_mu, t_mu))
+                 + getattr(args, "supcon_weight", LOSS_WEIGHTS["supcon"]) * supcon(model.contrastive_views(s_mu), by)
+                 + getattr(args, "mmd_weight", LOSS_WEIGHTS["mmd"]) * mmd(s_mu, t_mu))
         if two and (bc == 0).sum() > 1 and (bc == 1).sum() > 1:
             total = total + args.culture_mmd_weight * mmd(s_mu[bc == 0], s_mu[bc == 1])
         if args.align != "none" and epoch > args.align_warmup:
@@ -286,6 +286,10 @@ def main():
     parser.add_argument("--input-noise", type=float, required=True)
     parser.add_argument("--weight-decay", type=float, default=1e-4)
     parser.add_argument("--culture-mmd-weight", type=float, default=0.1)
+    parser.add_argument("--supcon-weight", type=float, default=LOSS_WEIGHTS["supcon"],
+                        help="Supervised contrastive loss weight (ablation: 0).")
+    parser.add_argument("--mmd-weight", type=float, default=LOSS_WEIGHTS["mmd"],
+                        help="Source-target MMD weight (ablation: 0).")
     parser.add_argument("--align", choices=["none", "cmmd", "ca"], default="none")
     parser.add_argument("--align-warmup", type=int, default=10)
     parser.add_argument("--align-confidence", type=float, default=0.9)

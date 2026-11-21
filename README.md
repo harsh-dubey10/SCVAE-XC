@@ -17,8 +17,9 @@ and training on more than one culture.
 
 No test labels are used to choose a model or a training epoch.
 
-Ablation: turning off the loss term that aligns the two training cultures changes nothing (67.2% vs 67.3%), so the
-gain from a second culture comes from the extra training data ([table](results/tables/ablation_culture_mmd.md)).
+Ablations ([table](results/tables/ablation_culture_mmd.md)): removing the culture-alignment MMD (67.2%), the supervised
+contrastive loss (67.4%) or the source-target MMD (66.2%) makes no significant difference to the full model (67.3%).
+The gains come from the eye features and the second training culture.
 
 ### Confusion matrix
 
@@ -97,8 +98,8 @@ German `0.0025` and `0`, French `0.0005` and `0.1`.
 
 - One training culture instead: `--sources SEED_GER`.
 - EEG only: `--modality eeg`.
-- Without the culture-alignment term (ablation): `--culture-mmd-weight 0 --output-root results/scvae_xc/ablation_no_culture_mmd`
-  (all 9 runs: `cluster/scvae_xc_ablation_cmmd.txt`).
+- Loss ablations: `--culture-mmd-weight 0`, `--supcon-weight 0` or `--mmd-weight 0`, each with its own `--output-root`
+  (all runs: `cluster/scvae_xc_ablation_cmmd.txt`, `cluster/scvae_xc_ablation_loss.txt`).
 - One test person only (quick check): `--test-subject 1`.
 - Results go to `results/scvae_xc/stage2/<target>/`.
 
@@ -114,7 +115,7 @@ sbatch --export=ALL,MANIFEST=cluster/scvae_xc_stage2.txt,PACK=6 --array=1-9 clus
 ```bash
 python -m src.experiments.summarize_scvae_xc_stage2   # accuracy table
 python -m src.experiments.significance_tests          # paired tests over the 28 test people
-python -m src.experiments.ablation_culture_mmd        # culture-MMD ablation table
+python -m src.experiments.ablation_culture_mmd        # loss ablation table
 python -m src.experiments.export_demo_model --out demo --target SEED_GER   # one model per test culture
 SCVAE_XC_DEMO=demo python -m src.experiments.scalp_maps                     # brain maps
 ```
