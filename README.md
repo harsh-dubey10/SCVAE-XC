@@ -86,8 +86,11 @@ Two cultures → the third (the main setting), EEG + eye:
 
 ```bash
 python -m src.experiments.train_scvae_xc --sources SEED_GER SEED_FRA --target SEED_CHN_MM \
-    --modality eeg_eye --seed 12 --learning-rate 0.0025 --input-noise 0
+    --modality eeg_eye --seed 12 --learning-rate 0.0025 --input-noise 0.1
 ```
+
+Settings used per test culture (chosen from the other two cultures only): Chinese `--learning-rate 0.0025 --input-noise 0.1`,
+German `0.0025` and `0`, French `0.0005` and `0.1`.
 
 - One training culture instead: `--sources SEED_GER`.
 - EEG only: `--modality eeg`.
