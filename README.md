@@ -106,7 +106,6 @@ sbatch --export=ALL,MANIFEST=cluster/scvae_xc_stage2.txt,PACK=6 --array=1-9 clus
 ```bash
 python -m src.experiments.summarize_scvae_xc_stage2   # accuracy table
 python -m src.experiments.significance_tests          # paired tests over the 28 test people
-python -m src.experiments.confusion_matrix            # confusion matrix
 python -m src.experiments.export_demo_model --out demo --target SEED_GER   # one model per test culture
 SCVAE_XC_DEMO=demo python -m src.experiments.scalp_maps                     # brain maps
 ```
